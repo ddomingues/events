@@ -15,5 +15,9 @@
     "typescript": "1.7.5"
   },
   "name": "linguagil",
-  "description": "linguagil: An Ionic project"
+  "description": "linguagil: An Ionic project",
+  "version": "0.0.1",
+  "scripts": {
+      "start": "ionic serve --lab"
+  }
 }
