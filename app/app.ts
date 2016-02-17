@@ -10,17 +10,13 @@ import {Type} from 'angular2/core';
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 class MyApp {
-  // make HelloIonicPage the root (or first) page
   rootPage: Type = SchedulesPage;
-  pages: Array<{title: string, component: Type}>;
+  pages: Array<{title: string, icon: string, component: Type}>;
 
   constructor(private app: IonicApp, private platform: Platform) {
-
     this.initializeApp();
-
-    // set our app's pages
     this.pages = [
-      { title: 'Programção', component: SchedulesPage }
+      { title: 'Programação', icon: 'briefcase', component: SchedulesPage }
     ];
   }
 
@@ -44,9 +40,7 @@ class MyApp {
   }
 
   openPage(page) {
-    // close the menu when clicking a link from the menu
     this.app.getComponent('leftMenu').close();
-    // navigate to the new page if it is not the current page
     let nav = this.app.getComponent('nav');
     nav.setRoot(page.component);
   }
