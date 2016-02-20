@@ -5,28 +5,19 @@
   <ion-title>Programação</ion-title>
 </ion-navbar>
 
-<ion-content padding>
-  <ion-list no-border>
-    
+<ion-content>
+  <ion-list *ngFor="#schedule of schedules" no-border>
     <ion-list-header>
-      08:00
+      {{schedule.start_at}}
     </ion-list-header>
-    
-    <ion-item>
-      Astronomy <br>
-      08:00 - 12:00 <br>
+
+    <ion-item *ngFor="#talk of schedule.talks">
+      {{talk.title}} <br>
+      {{talk.start_at | date:'HH:mm'}} - {{talk.end_at | date:'HH:mm'}} <br>
       <ion-note>
         To the moon
       </ion-note>
     </ion-item>
-    
-    <ion-item>
-      Astronomy <br>
-      08:00 - 12:00 <br>
-      <ion-note>
-        To the moon
-      </ion-note>
-    </ion-item>
-    
+
   </ion-list>
 </ion-content>
