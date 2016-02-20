@@ -15,7 +15,7 @@
     "typescript": "1.7.5"
   },
   "name": "events",
-  "description": "Events - \m/",
+  "description": "Events - \\m/",
   "version": "0.0.1",
   "scripts": {
       "start": "ionic serve --lab"
