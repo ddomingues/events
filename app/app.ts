@@ -1,4 +1,10 @@
 import {App, IonicApp, Platform} from 'ionic-framework/ionic';
+import {Http, XHRBackend, RequestOptions, HTTP_PROVIDERS} from 'angular2/http';
+import {provide} from 'angular2/core';
+// TODO It may make the app slow
+import 'rxjs/Rx';
+
+import {TalkService} from './services/talk'
 
 import {SchedulesPage} from './pages/schedules/schedules';
 
@@ -7,9 +13,22 @@ import {Type} from 'angular2/core';
 
 @App({
   templateUrl: 'build/app.html',
-  config: {} // http://ionicframework.com/docs/v2/api/config/Config/
+  providers: [
+    TalkService,
+    provide(Http,
+      {
+        useFactory: (backend, defaultOptions) => {
+          defaultOptions.headers.append('X-Parse-Application-Id', 'APPLICATION_ID');
+          defaultOptions.headers.append('X-Parse-REST-API-Key', 'API_KEY');
+          return new Http(backend, defaultOptions);
+        },
+        deps: [XHRBackend, RequestOptions]
+      }
+    )
+  ],
+  config: {} // http://ionicframework.com/docs/v2/api/config/Config/,
 })
-class MyApp {
+class EventsApp {
   rootPage: Type = SchedulesPage;
   pages: Array<{title: string, icon: string, component: Type}>;
 
