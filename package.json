@@ -1,4 +1,9 @@
 {
+  "name": "events",
+  "title": "Events",
+  "description": "Events - A simple way of to present your events \\m/",
+  "version": "0.0.1",
+  "license": "MIT",
   "dependencies": {
     "angular2": "2.0.0-beta.6",
     "es6-promise": "3.0.2",
@@ -14,10 +19,7 @@
     "strip-sourcemap-loader": "0.0.1",
     "typescript": "1.7.5"
   },
-  "name": "events",
-  "description": "Events - \\m/",
-  "version": "0.0.1",
   "scripts": {
-      "start": "ionic serve --lab"
+    "start": "ionic serve --lab"
   }
 }
